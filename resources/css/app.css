@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*,
+*::before,
+*::after {
+    padding: none;
+    margin: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans';
+    color: black;
+    /* color: white; */
+    /* background-color: #f8f8f8; */
+    margin-bottom: 400px;
+    height: 100vh;
+    /* background-image: url("../images/downtown-city-skyline.jpg"); */
+    /* background: #eeee url("../images/downtown-city-skyline.jpg") no-repeat; */
+    background: #eeee url("../images/skyscrapers-looking-up.jpg") no-repeat;
+    background-size: cover;
+    font-size: 1rem;
+}
+
+
+/* Header*/
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: red;
+    padding: 0 0 0 0;
+    color: black;
+}
+
+header>.container-fluid {
+    padding: 0 0 0 0;
+}
+
+header>ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li>a {
+    text-decoration: none;
+}
+
+header li {
+    list-style: none;
+}
+
+#navbarSupportedContent {
+    text-align: center;
+}
+
+.navbar-brand {
+    padding: 0px 0 0 8px;
+}
+
+.nav-item {
+    font-size: 16px;
+    padding: 0 0 0 0px;
+}
+
+.container-fluid {
+    padding: 0 0 0 0;
+}
+
+.contact-tel {
+    font-size: 19px;
+}
+
+
+/* Footer*/
+
+footer {
+    position: relative;
+    color: white;
+}
+
+
+/* End Footer */
+
+
+/*Main*/
+
+
+/* main {
+    flex-direction: row;
+    min-height: 100vh;
+    position: relative;
+} */
+
+.main-menu {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.content-body {
+    margin: 30px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    min-height: 500px;
+}
+
+.left__section {
+    /* max-width: 300px;
+    padding: 5px;  */
+    /* margin-right: -24px; */
+    position: relative;
+    padding-left: 0px;
+}
+
+
+/* 
+ .left__section h2 {
+    margin-top: 3px;
+    padding: 13px; }*/
+
+.left__section ul {
+    list-style: none;
+    text-decoration: none;
+    position: inherit;
+    flex-direction: row;
+    padding-left: 0px;
+    padding-right: 0px;
+    /* gap: 16px; */
+    /* padding: 0 0 0 26px; */
+}
+
+.left__section summary {
+    list-style: none;
+    text-decoration: none;
+    position: inherit;
+    flex-direction: row;
+    /* gap: 16px; */
+    padding: 0 px;
+}
+
+.category-type {
+    column-count: 2;
+    padding: 0 px;
+}
+
+li>a {
+    text-decoration: none;
+    list-style: none;
+}
+
+.col-sm-2 {
+    margin-top: 8px;
+    padding: 0 12px 0 12px;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+/* .form-control {
+    border: none;
+    background-color: inherit;
+    margin: 0px;
+} */
+
+.me-2 {
+    margin: none;
+}
+
+.image-apartments {
+    width: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .left__section {
+        /* width: 81%; */
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    /* .navbar {
+       width: 130%; 
+    } */
+    /*  .main {
+        width: 81%;
+    }
+    .right__section {
+        margin-right: 0px;
+        width: 81%;
+    } */
+    .container {
+        width: 100%;
+        /* width: 360px; */
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
+summary {
+    display: list-item;
+}
+
+.right__section {
+    padding: 39px;
+    text-decoration: none;
+}
+
+
+/*End Main*/
+
+
+/*Aside*/
+
+
+/* aside p {
+    width:20%;
+    float:right;
+    font-style:italic;
+    animation-iteration-count: 2, 0, infinite;
+} */
+
+aside>p {
+    animation: 3s infinite alternate slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 200%;
+        width: 300%;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+
+/* blog style */
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+
+/*pagination styles */
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: rgb(126, 218, 226);
+    border-color: rgb(126, 218, 226);
+}
+
+
+/* .page-link {
+    color: black;
+} */
+
+.example {
+    display: grid;
+    transition: all .5s;
+    user-select: none;
+    background: linear-gradient(to bottom, white, black);
+}
