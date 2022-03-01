@@ -15,7 +15,7 @@ use App\Http\Controllers\api\ArticleApiController;
 use App\Http\Controllers\api\ImobilApiController;
 
 use App\Http\Controllers\ItemController;
-
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\RegistrationController;
 /*
 |--------------------------------------------------------------------------
@@ -32,12 +32,16 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
  Route::get('/registration', function () {return view('registration'); })->name('registration');
 
+ Route::get('/aboutUs', function () {return view('aboutUs'); })->name('aboutUs');
+
  Route::get('/houses', [HouseController::class, 'index'])->name('house');
 
  Route::get('/apartment', [ApartmentController::class, 'index'])
  ->name('apartment');
 
  Route::get('/blog/article/create', [ArticleController::class, 'create']);
+
+ Route::get('/blog/article/update/{id}', [ArticleController::class, 'update']);
 
  Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
@@ -55,19 +59,10 @@ Route::get('/item/{id}', [ItemController::class, 'index'])->name('itemById');
 Route::get('/house/item/', [ItemController::class, 'index'])->name('housesItem');
 
 
-// Route::post('/productAdd/{productId}', [ProductController::class, 'addProduct'])->name('product.add');
-
-
-
-
 Route::get('/contact', [ContactUsController::class, 'view'])->name('contactUs');
 
 Route::post('/contactUs', [ContactUsController::class, 'send'])->name('contactUs.send')
 ->middleware('log.activity:sendContactUs');
-
-
-// Route::post('/contactUs/{articleId}', [CommentController::class, 'send'])->name('comment.send');
-
 
 Route::get('/api/articles/most-popular',  [ArticleApiController::class, 'readMostPopular']);
 
@@ -81,16 +76,9 @@ Route::post('/api/articles/{id}',  [ArticleApiController::class, 'updateArticle'
 
 Route::delete('/api/articles/{id}',  [ArticleApiController::class, 'deleteArticle']);
 
-
-
-
-//Route::get('/api/items/most-popular', [ImobilApiController::class, 'readMostPopular']);
 Route::get('/api/items', [ImobilApiController::class, 'readAll']);
 Route::get('/api/items/{id}', [ImobilApiController::class, 'readOne']);
 
+// Route::post('/contactUs/{articleId}', [CommentController::class, 'send'])->name('comment.send');
 
-
-// Route::post('/api/items/new',[ImobilApiController::class, 'postNew']);
-
-// Route::get('/api/items/type', [ImobilApiController::class, 'readType']);
 
