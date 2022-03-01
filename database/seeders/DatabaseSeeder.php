@@ -26,16 +26,6 @@ class DatabaseSeeder extends Seeder
         ->has(BlogTag::factory(),'tags')
         ->create();
       
-      Comment::factory()->count(20)->create();
-
-     
-
-      
-
-      
-
-      
-
-      
+      Comment::factory()->count(20)->create();  
     }
 }
