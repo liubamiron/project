@@ -17,7 +17,9 @@ body {
     height: 100vh;
     /* background-image: url("../images/downtown-city-skyline.jpg"); */
     /* background: #eeee url("../images/downtown-city-skyline.jpg") no-repeat; */
-    background: #eeee url("../images/skyscrapers-looking-up.jpg") no-repeat;
+    
+    /* background: #eeee url("../images/skyscrapers-looking-up.jpg") no-repeat; */
+    background: #eeee url("../images/ben-o-bro-wpU4veNGnHg-unsplash.jpg") no-repeat;
     background-size: cover;
     font-size: 1rem;
 }
