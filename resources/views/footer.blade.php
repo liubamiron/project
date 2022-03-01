@@ -12,13 +12,13 @@
 
                 <h5 class="title">Customer Services</h5>
 
-                <ul class="list-unstyled">
+                {{-- <ul class="list-unstyled">
 
                     <li> <a href="#">Money refund</a></li>
 
                     <li> <a href="#">Terms and Policy</a></li>
 
-                </ul>
+                </ul> --}}
 
             </aside>
 
@@ -26,17 +26,13 @@
 
                 <h5 class="title">My Account</h5>
 
-                <ul class="list-unstyled">
+                {{-- <ul class="list-unstyled">
 
                     <li> <a href="#"> User Login </a></li>
 
                     <li> <a href="#"> Account Setting </a></li>
 
-                    <li> <a href="#"> My Orders </a></li>
-
-                    <li> <a href="#"> My Wishlist </a></li>
-
-                </ul>
+                </ul> --}}
 
             </aside>
 
@@ -46,11 +42,7 @@
 
                 <ul class="list-unstyled">
 
-                    <li> <a href="#"> About us </a></li>
-
-                    <li> <a href="#"> Advertise </a></li>
-
-                    <li> <a href="#"> Partnership </a></li>
+                    <li> <a class="nav-link" href="{{route('aboutUs')}}">About us</a></li>
 
                 </ul>
 
