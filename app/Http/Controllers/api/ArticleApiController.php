@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\api\CreateArticleRequest;
+use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use App\Models\User;
 use App\Services\ModelLogger;
@@ -11,6 +12,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Support\Str;
+
+
 
 class ArticleApiController extends Controller
 {
@@ -103,13 +106,6 @@ class ArticleApiController extends Controller
     public function createArticle(Request $request, ModelLogger $logger): JsonResponse
     {
 
-        // not the best validation logic
-        // if ($request->input('title') === 'some') {
-        //     return $this->responseFactory->json(['message' => 'incorrect title'], 400);
-        // }
-
-        // dd($request->all());
-
         $article = Article::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
@@ -124,24 +120,26 @@ class ArticleApiController extends Controller
         return $this->responseFactory->json(['id' => $article->id], 201);
     }
 
-    //update article
 
-    public function update($articleId, ArticleRequest $request): JsonResponse
+    //update article
+    public function updateArticle($articleId, Request $request): JsonResponse
     {
         $article = Article::find($articleId);
+       
         if($article){
-            try {
-                $article->title = $request->title;
+             try {
+                $article->title = $request->input('title');
+                $article->description = $request->input('description');
+                $article->author_id = $request->input('user');
+                $article->image = $request->file('image')->store('/', 'public');
                 $article->save();
                 // Successfully updated
                 return $this->responseFactory->json(['id' => $article->id], 200);
-            } catch (\Throwable $e) {
-                // Invalid update
+             } catch (\Throwable $e) {
+                //Invalid update
                 return $this->responseFactory->json(['error' => 'An error occurred when trying to update article!'], 200);
             }
-        }
-
-        // Not found
+        }      // Not found
         return $this->responseFactory->json(null, 404);
     }
 
