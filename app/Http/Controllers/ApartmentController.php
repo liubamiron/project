@@ -29,36 +29,13 @@ class ApartmentController extends Controller {
 
         $rooms = Imobil::select('rooms_nr')->distinct()->get();
 
-// for city filter       
-        $cities = Address::select('city')->distinct()->get();
-
-        $city = $request['city'] ?? '';
-
-        // $city = $request['city'] ?? $cities->first()->id;
-
-        // if($citiesname === ''){
-        //     $imobils = Imobil::select()->where('type', '=', 'APPARTMENT')->paginate(7);
-        // }
-        // else{
-        //     $imobils = Imobil::select()->where('city', '=', $citiesname) 
-        //                                 ->where( 'type', '=', 'APPARTMENT')->paginate(7);
-        // }
         $benefit = Benefit::all();
-
-
-    //     return view('imobils.imobil', ['imobils' => $imobils, 'benefit' => $benefit, 
-    //     'roomsnr' => $roomsnr, 'rooms' => $rooms, 'filter' => [
-    //         'rooms' =>$rooms, ]]);           
-    // }
 
     return view('imobils.imobil',
     ['imobils' => $imobils,
     'benefit' => $benefit, 
     'roomsnr' => $roomsnr,
-    'rooms' => $rooms,
-'cities' => $cities,
-'city' => $city,
-'filter' => ['city' => $city,]]);           
+    'rooms' => $rooms]);           
 }
 
     
