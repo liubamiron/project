@@ -106,16 +106,5 @@ class ImobilApiController extends Controller
         echo json_encode($imobilsArray);
     }
 
-    // public function readPrice()
-    // {
-    //     $imobil = Imobil::find($imobil->price);
-    //     echo json_encode($imobil);
-    // }
-
-    // public function readRooms()
-    // {
-    //     $imobil = Imobil::find($imobil->rooms_nr);
-    //     echo json_encode($imobil);
-    // }
 
 }
