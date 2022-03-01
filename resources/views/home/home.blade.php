@@ -2,16 +2,18 @@
 @section('content')
 
 <h2 class="title-text text-center text-black"> Apartments for Rent </h2>
-<br>
-   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        @foreach($apartments as $apartment)
+<br> 
 
-            <div class="col">
-             @include('imobils.item', ['imobil'=>$apartment])
-            </div>
-        @endforeach
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+   
+    @foreach($apartments as $apartment)
+    <div class="col">
+    @include('imobils.item', ['imobil'=>$apartment])
     </div>
-    <br>
+@endforeach
+ </div> 
+   
+   <br> 
     <h2 class="title-text text-center text-black"> Houses for Rent </h2>
     <br>
      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -22,6 +24,6 @@
             </div>
         @endforeach
     </div>
-    <br>      
+    <br>       
 
 @endsection
