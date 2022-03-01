@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Psr\Log\LoggerInterface;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse; 
-//use App\Http\Controllers\api\ArticleApiController;
+use App\Http\Controllers\api\ArticleApiController;
 
 class ArticleController extends Controller
 {/** @var ResponseFactory */
@@ -55,28 +55,16 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function update($articleId, ArticleRequest $request): JsonResponse
+    public function update()
     {
-        $article = Article::find($articleId);
+        $categories = BlogCategory::all();
+
+        $users = User::all();
 
         return view('article.update', [
-            'article' => $articles,
+            'categories' => $categories,
+            'users' => $users,
 
         ]);
-
-        // if($article){
-        //     try {
-        //         $article->title = $request->title;
-        //         $article->save();
-        //         // Successfully updated
-        //         return $this->responseFactory->json(['id' => $article->id], 200);
-        //     } catch (\Throwable $e) {
-        //         // Invalid update
-        //         return $this->responseFactory->json(['error' => 'An error occurred when trying to update article!'], 200);
-        //     }
-        // }
-
-        // // Not found
-        // return $this->responseFactory->json(null, 404);
     }
 }
